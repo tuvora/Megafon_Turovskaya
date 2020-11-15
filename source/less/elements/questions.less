@@ -1,0 +1,146 @@
+// Без скриптов
+.no-js {
+	.questions__item.accordion-list__item {
+		margin-bottom: 1.5rem;
+		background-color: #f9f9f9;
+	}
+}
+// Без скриптов
+
+.questions__item {
+	position: relative;
+	padding: 1.5rem 3rem;
+	padding-right: 6rem;
+
+	font-size: 1.4rem;
+
+	// Активный вопрос
+	&.accordion-list__item_active {
+		margin-bottom: 1.5rem;
+		background-color: #f9f9f9;
+
+		.questions__close {
+			opacity: 1;
+		}
+	}
+
+	&::before {
+		content: '\2014';
+		position: absolute;
+		transform: translate(-150%, -1px);
+
+		color: @link-color;
+	}
+}
+
+.questions__close {
+	position: absolute;
+	top: 5px;
+	right: 16px;
+
+	font-family: auto;
+	font-size: 30px;
+	line-height: 1;
+	font-weight: 100;
+	color: #999;
+
+	opacity: 0;
+	cursor: pointer;
+
+	transition: all 0.3s ease-out;
+
+	&::after {
+		content: '\00d7';
+	}
+}
+
+.questions__button {
+	color: @link-color;
+
+	border-bottom: 1px dashed transparent;
+
+	transition: all 0.2s ease-out;
+
+	&:hover,
+	&:focus {
+		border-color: inherit;
+	}
+}
+
+.questions__inner {
+	&.accordion-list__content {
+		margin: 0;
+		margin-top: 1.8rem;
+	}
+}
+
+.questions__footer {
+	display: flex;
+	margin-top: 3rem;
+
+	color: #999999;
+
+	p {
+		display: inline-block;
+		margin-right: 2.5rem;
+	}
+
+	.questions__success {
+		display: none;
+	}
+}
+
+.questions__ask {
+	display: flex;
+}
+
+.questions__answer {
+	display: inline-block;
+	margin-right: 1rem;
+
+	color: @link-color;
+
+	border-bottom: 1px solid transparent;
+
+	transition: all 0.2s ease-out;
+
+	&:hover,
+	&:focus {
+		border-color: inherit;
+	}
+}
+
+.questions__link span {
+	margin-left: 5px;
+	color: @text-color;
+}
+
+@media (max-width: @mobile-width) {
+	.questions__item {
+		padding-left: 2.5rem;
+		padding-right: 4rem;
+	}
+
+	.questions__close {
+		top: 7px;
+		right: 6px;
+	}
+
+	.questions__footer {
+		display: block;
+		text-align: center;
+
+		p {
+			margin-right: 0;
+			margin-bottom: 5px;
+		}
+	}
+
+	.questions__ask {
+		display: block;
+	}
+
+	.questions__answer {
+		margin: 0 2.5rem;
+	}
+}

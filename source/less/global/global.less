@@ -1,0 +1,96 @@
+html {
+	font-size: 10px;
+}
+
+body {
+	position: relative;
+	min-width: 320px;
+
+	font-family: @base-font;
+	font-size: 1.4rem;
+	font-weight: 400;
+	line-height: 1.4;
+	font-style: normal;
+	color: @text-color;
+
+	background-color: @bg-color;
+}
+
+body.lock {
+	overflow: hidden;
+}
+
+main {
+	position: relative;
+	min-height: calc(100vh - 70px - 100px);
+}
+
+main > section {
+	margin-bottom: 3rem;
+}
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+}
+
+img, 
+svg {
+	display: inline-block;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: @link-color;
+	text-decoration: none;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+button {
+	font-family: inherit;
+	font-size: inherit;
+	background-color: transparent;
+	border: none;
+
+	cursor: pointer;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+	position: absolute;
+
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+
+	white-space: nowrap;
+
+	clip-path: inset(100%);
+	clip: rect(0, 0, 0, 0);
+	overflow: hidden;
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 1070px;
+	padding: 0 30px;
+	margin: 0 auto;
+}
+
+@media (max-width: @mobile-width) {
+	.wrapper {
+		padding: 0 1.5rem;
+	}
+}
